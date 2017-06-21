@@ -7,9 +7,10 @@ namespace TodoApi
 {
     public class Startup
     {   
-        //cobnfigures services - controller? uses services as its dot notation namespace - kind of like controller as
+        //configures services - this is the services controller. uses services as its dot notation namespace - kind of like controller as
         public void ConfigureServices(IServiceCollection services)
         {
+            //injects in-memory database use into the service controller
             services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();
         }
